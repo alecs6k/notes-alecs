@@ -1,10 +1,12 @@
 const { Pool } = require("pg")
+const {db} = require('./config')
+
 // Coloca aquí tus credenciales
 const pool = new Pool({
-  user: "alecsNotes",
-  host: "alecsnotes.ch5zttguuk8f.us-east-1.rds.amazonaws.com",
-  database: "alecsNotes",
-  password: "dedosmascados",
-  port: 5432,
+  user: db.user,
+  host: db.host,
+  database: db.database,
+  password: db.password,
+  port: db.port,
 });
 module.exports = pool;
