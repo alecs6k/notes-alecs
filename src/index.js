@@ -12,5 +12,8 @@ app.use(express.json());
 
 app.use(taskRoutes);
 
-app.listen(4000);
-console.log("Server on port 4000");
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, function() {
+    console.log("Server on port", PORT);
+});
+
