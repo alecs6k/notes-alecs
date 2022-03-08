@@ -3,7 +3,8 @@ const { getAllTasks,
         createTask,
         updateTask,
         deleteTask,
-        getTask
+        getTask,
+        inicio
 } = require('../controllers/tasks.controllers');
 
 const router = Router();
@@ -17,6 +18,8 @@ router.post("/tasks", createTask);
 router.delete("/tasks/:id", deleteTask);
 
 router.put("/tasks/:id", updateTask);
+
+router.get("/", inicio);
 
 
 module.exports = router;

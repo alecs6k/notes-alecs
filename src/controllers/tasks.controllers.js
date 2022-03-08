@@ -71,10 +71,15 @@ const updateTask = async (req, res) => {
   return res.json(result.rows[0]);
 };
 
+const inicio = async (req, res) => {
+  res.send("HOLA MUNDO");
+}
+
 module.exports = {
   getAllTasks,
   createTask,
   deleteTask,
   updateTask,
   getTask,
+  inicio,
 };
