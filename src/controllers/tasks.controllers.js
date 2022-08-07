@@ -1,7 +1,6 @@
 const pool = require("../db");
 
 const getAllTasks = async (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
   try {
     const allTasks = await pool.query("SELECT * FROM task");
     res.json(allTasks.rows);
@@ -11,7 +10,6 @@ const getAllTasks = async (req, res) => {
 };
 
 const getTask = async (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
   try {
     const { id } = req.params;
 
@@ -31,7 +29,6 @@ const getTask = async (req, res) => {
 };
 
 const createTask = async (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
   const { title, description } = req.body;
   try {
     const result = await pool.query(
@@ -46,7 +43,6 @@ const createTask = async (req, res) => {
 };
 
 const deleteTask = async (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
   const { id } = req.params;
 
   const result = await pool.query("DELETE FROM task WHERE id = $1", [id]);
@@ -59,7 +55,6 @@ const deleteTask = async (req, res) => {
 };
 
 const updateTask = async (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
   const { id } = req.params;
   const { title, description } = req.body;
 
@@ -77,7 +72,6 @@ const updateTask = async (req, res) => {
 };
 
 const inicio = async (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
   res.send("HOLA MUNDO");
 }
 
