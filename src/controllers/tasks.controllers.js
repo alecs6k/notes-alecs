@@ -2,7 +2,7 @@ const pool = require("../db");
 
 const getAllTasks = async (req, res) => {
   try {
-    const allTasks = await pool.query("SELECT * FROM task");
+    const allTasks = await pool.query("SELECT * FROM task ORDER BY id");
     res.json(allTasks.rows);
   } catch (error) {
     console.log(error.message);
